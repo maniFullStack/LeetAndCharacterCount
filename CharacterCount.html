@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+<meta charset="utf-8">
+<title>Character Counter</title>
+</head>
+<body class="container">
+
+<script>
+$(document).ready(function(){
+countCharacter('aaabbdcccccf');
+countCharacter('hhhhhqqlllllllhhhppp');
+});
+
+function countCharacter(text){
+var res = text
+    .replace(/(.)\1*/g, function(m, $1) {
+        return $1 + m.length;
+    });
+console.log(res);
+
+}
+
+</script>
+</body>
+</html>
